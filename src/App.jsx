@@ -1,4 +1,4 @@
-import { useState, Suspense, lazy } from 'react'
+import { Suspense, lazy } from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Sidebar from './components/layout/Sidebar'
@@ -25,14 +25,13 @@ function LoadingSpinner() {
 }
 
 export default function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
   useTheme()
 
   return (
     <HashRouter>
       <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
-        <Navbar onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
-        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        <Navbar />
+        <Sidebar />
 
         <main className="pt-16 lg:pl-[280px] min-h-screen">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
