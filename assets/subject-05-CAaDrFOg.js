@@ -932,7 +932,7 @@ systemctl is-system-running > /dev/null 2>&1 && \\
 
 # Check memory
 TOTAL_MEM=$(free -g | awk '/^Mem:/{print $2}')
-echo "[INFO] Total memory: ${TOTAL_MEM} GB"
+echo "[INFO] Total memory: \${TOTAL_MEM} GB"
 
 # Check CPU count
 echo "[INFO] CPUs: $(nproc)"
