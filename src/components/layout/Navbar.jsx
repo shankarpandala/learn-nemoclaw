@@ -38,8 +38,6 @@ export default function Navbar() {
           {/* ~/pandala.in prefix */}
           <a
             href="https://www.pandala.in"
-            target="_blank"
-            rel="noopener noreferrer"
             className="hidden sm:flex items-center font-mono text-sm text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
           >
             ~/pandala.in
