@@ -42,6 +42,10 @@
   --color-success: #22c55e;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
+
+  /* Layout */
+  --sidebar-width: 280px;
+  --navbar-height: 56px;
 }
 
 /* ── Base resets ────────────────────────────────────────────────────── */
@@ -157,4 +161,15 @@ code {
 /* ── Transition utilities ───────────────────────────────────────────── */
 .transition-theme {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ── Print ─────────────────────────────────────────────────────────── */
+@media print {
+  nav, aside, footer, .no-print {
+    display: none !important;
+  }
+  main {
+    margin-left: 0 !important;
+    padding-top: 0 !important;
+  }
 }

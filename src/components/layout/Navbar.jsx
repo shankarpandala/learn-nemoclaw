@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Shield, Search, Menu, X, Moon, Sun, Github } from 'lucide-react'
+import { Shield, Search, Menu, X, Moon, Sun, Github, User } from 'lucide-react'
 import useAppStore from '../../store/appStore'
 
 export default function Navbar() {
@@ -23,13 +23,13 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-14 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <nav className="sticky top-0 z-50 h-14 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80">
       <div className="h-full px-4 flex items-center justify-between">
         {/* Left: hamburger + logo */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="lg:hidden p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
+            className="lg:hidden p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors focus-visible:ring-2 focus-visible:ring-[#76B900]"
             aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
           >
             {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
@@ -79,6 +79,17 @@ export default function Navbar() {
             <Github size={18} />
           </a>
 
+          <a
+            href="https://www.pandala.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center font-mono text-sm text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors px-1.5"
+            aria-label="pandala.in"
+          >
+            <User size={16} className="mr-1" />
+            <span className="hidden sm:inline">pandala.in</span>
+          </a>
+
           <button
             onClick={toggleTheme}
             className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
@@ -91,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile search bar (expandable) */}
       {searchOpen && (
-        <div className="md:hidden px-4 pb-3 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div className="md:hidden px-4 pb-3 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
           <form onSubmit={handleSearch} className="relative">
             <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
