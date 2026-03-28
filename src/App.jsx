@@ -29,11 +29,11 @@ export default function App() {
 
   return (
     <HashRouter>
-      <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
+      <div className="flex flex-col min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
         <Navbar />
         <Sidebar />
 
-        <main className="pt-16 lg:pl-[280px] min-h-screen">
+        <main className="flex-1 lg:ml-[280px] pt-14">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
