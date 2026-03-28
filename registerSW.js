@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/learn-nemoclaw/sw.js', { scope: '/learn-nemoclaw/' })})}
