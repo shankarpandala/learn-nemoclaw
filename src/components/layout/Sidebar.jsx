@@ -74,7 +74,7 @@ export default function Sidebar() {
                   className="w-2 h-2 rounded-full shrink-0"
                   style={{ backgroundColor: sub.colorHex || '#76B900' }}
                 />
-                <span className="truncate flex-1 text-left">{sub.title}</span>
+                <span className="flex-1 text-left">{sub.title}</span>
                 <span className="text-[10px] text-gray-400 dark:text-gray-500 mr-1">
                   {progress}%
                 </span>

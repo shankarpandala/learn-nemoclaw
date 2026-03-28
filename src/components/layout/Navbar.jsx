@@ -35,15 +35,15 @@ export default function Navbar() {
             {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
 
-          {/* ~/pandala.in prefix */}
+          {/* ~/pandala.in prefix (matches math4ai) */}
           <a
             href="https://www.pandala.in"
-            className="hidden sm:flex items-center font-mono text-sm text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+            className="hidden sm:inline font-mono text-xs text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
           >
             ~/pandala.in
           </a>
 
-          <span className="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-700 mx-1">|</span>
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
