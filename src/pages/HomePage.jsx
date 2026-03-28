@@ -122,7 +122,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* Stats */}
       {/* ------------------------------------------------------------------ */}
-      <section className="max-w-6xl mx-auto px-6 -mt-10 relative z-10">
+      <section className="mx-auto px-6 -mt-10 relative z-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {stats.map((stat) => (
             <motion.div
@@ -150,7 +150,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* Subject Cards */}
       {/* ------------------------------------------------------------------ */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="mx-auto px-6 py-16">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Curriculum
         </h2>
@@ -176,7 +176,7 @@ export default function HomePage() {
       {/* Features */}
       {/* ------------------------------------------------------------------ */}
       <section className="bg-gray-50 dark:bg-gray-800/50 py-16">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="mx-auto px-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 text-center">
             Why Learn NemoClaw?
           </h2>
