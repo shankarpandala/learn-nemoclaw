@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Shield, Search, Menu, X, Moon, Sun, Github, User } from 'lucide-react'
+import { Shield, Search, Menu, X, Moon, Sun, Github, Linkedin, User } from 'lucide-react'
 import useAppStore from '../../store/appStore'
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 h-14 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-950/80">
       <div className="h-full px-4 flex items-center justify-between">
-        {/* Left: hamburger + logo */}
+        {/* Left: pandala.in prefix + hamburger + logo (matches math4ai pattern) */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -34,11 +34,25 @@ export default function Navbar() {
           >
             {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
+
+          {/* ~/pandala.in prefix */}
+          <a
+            href="https://www.pandala.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex items-center font-mono text-sm text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+          >
+            ~/pandala.in
+          </a>
+
+          <span className="hidden sm:inline text-gray-300 dark:text-gray-700">|</span>
+
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-md bg-[#76B900] flex items-center justify-center">
               <Shield size={16} className="text-white" />
             </div>
-            <span className="font-semibold text-gray-900 dark:text-gray-100 hidden sm:inline">
+            <span className="font-semibold text-gray-900 dark:text-gray-100">
               Learn NemoClaw
             </span>
           </Link>
@@ -58,7 +72,7 @@ export default function Navbar() {
           </form>
         </div>
 
-        {/* Right: actions */}
+        {/* Right: search (mobile) + theme toggle + name + linkedin + github */}
         <div className="flex items-center gap-1">
           {/* Mobile search toggle */}
           <button
@@ -69,27 +83,6 @@ export default function Navbar() {
             <Search size={18} />
           </button>
 
-          <a
-            href="https://github.com/NVIDIA/NemoClaw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
-            aria-label="GitHub"
-          >
-            <Github size={18} />
-          </a>
-
-          <a
-            href="https://www.pandala.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center font-mono text-sm text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors px-1.5"
-            aria-label="pandala.in"
-          >
-            <User size={16} className="mr-1" />
-            <span className="hidden sm:inline">pandala.in</span>
-          </a>
-
           <button
             onClick={toggleTheme}
             className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
@@ -97,6 +90,37 @@ export default function Navbar() {
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+
+          {/* Author name + social links (matches math4ai right side) */}
+          <a
+            href="https://www.pandala.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors px-2"
+          >
+            <User size={16} />
+            <span>Shankar Pandala</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/shankarpandala/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={18} />
+          </a>
+
+          <a
+            href="https://github.com/shankarpandala/learn-nemoclaw"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
+            aria-label="GitHub"
+          >
+            <Github size={18} />
+          </a>
         </div>
       </div>
 
