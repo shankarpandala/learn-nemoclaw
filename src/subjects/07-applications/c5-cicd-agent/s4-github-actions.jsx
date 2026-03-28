@@ -224,7 +224,7 @@ jobs:
           GH_TOKEN: \${{ secrets.GITHUB_TOKEN }}
         run: |
           # Get number of changed files
-          FILES=$(gh pr view ${{ github.event.pull_request.number }} \\
+          FILES=$(gh pr view \${{ github.event.pull_request.number }} \\
             --json files --jq '.files | length')
 
           # Skip tiny PRs (1-2 files, likely config changes)
@@ -235,7 +235,7 @@ jobs:
           fi
 
           # Check if only docs changed
-          DOCS_ONLY=$(gh pr view ${{ github.event.pull_request.number }} \\
+          DOCS_ONLY=$(gh pr view \${{ github.event.pull_request.number }} \\
             --json files --jq '[.files[].path | test("^docs/|README|\\.md$")] | all')
 
           if [ "$DOCS_ONLY" = "true" ]; then
