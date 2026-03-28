@@ -1,0 +1,73 @@
+export default {
+  id: '04-policies',
+  title: 'NemoClaw Policies In Detail',
+  icon: '\u{1F4CB}',
+  colorHex: '#E53935',
+  description: 'Master network and filesystem policies, operator approval workflows, and custom policy authoring.',
+  difficulty: 'intermediate',
+  estimatedHours: 7,
+  prerequisites: ['03-nemoclaw-architecture'],
+  chapters: [
+    {
+      id: 'c1-network-policy',
+      title: 'Deny-By-Default Network Policy',
+      description: 'Network policy philosophy, YAML structure, and default groups.',
+      estimatedMinutes: 50,
+      sections: [
+        { id: 's1-deny-by-default', title: 'Deny-By-Default Philosophy', difficulty: 'intermediate', readingMinutes: 10, description: 'Why all network access is blocked unless explicitly allowed.' },
+        { id: 's2-yaml-structure', title: 'Policy YAML Structure', difficulty: 'intermediate', readingMinutes: 15, description: 'Full YAML format with groups, endpoints, ports, and TLS.' },
+        { id: 's3-default-policy-groups', title: 'The 9 Default Policy Groups', difficulty: 'intermediate', readingMinutes: 12, description: 'claude_code, nvidia, github, npm_registry, and more.' },
+        { id: 's4-tls-enforcement', title: 'TLS Enforcement', difficulty: 'intermediate', readingMinutes: 10, description: 'Why all connections must use TLS on port 443.' },
+      ],
+    },
+    {
+      id: 'c2-filesystem-policy',
+      title: 'Filesystem Policies',
+      description: 'Read-write zones, read-only zones, and Landlock enforcement.',
+      estimatedMinutes: 50,
+      sections: [
+        { id: 's1-readwrite-zones', title: 'Read-Write Zones', difficulty: 'intermediate', readingMinutes: 12, description: '/sandbox, /tmp, and /dev/null write permissions.' },
+        { id: 's2-readonly-zones', title: 'Read-Only Zones', difficulty: 'intermediate', readingMinutes: 12, description: '/usr, /lib, /proc, /app, /etc, /var/log read access.' },
+        { id: 's3-landlock-internals', title: 'Landlock Enforcement Internals', difficulty: 'advanced', readingMinutes: 15, description: 'Ruleset creation, rule addition, and kernel enforcement.' },
+        { id: 's4-custom-filesystem', title: 'Custom Filesystem Rules', difficulty: 'intermediate', readingMinutes: 10, description: 'Adding custom read-write and read-only paths.' },
+      ],
+    },
+    {
+      id: 'c3-policy-modification',
+      title: 'Policy Modification',
+      description: 'Static changes, dynamic policies, sessions, and presets.',
+      estimatedMinutes: 45,
+      sections: [
+        { id: 's1-static-changes', title: 'Static Policy Changes', difficulty: 'intermediate', readingMinutes: 10, description: 'Edit YAML and run nemoclaw onboard to apply.' },
+        { id: 's2-dynamic-policies', title: 'Dynamic Policies', difficulty: 'intermediate', readingMinutes: 10, description: 'Session-only changes with openshell policy set.' },
+        { id: 's3-session-vs-baseline', title: 'Session vs Baseline Policies', difficulty: 'intermediate', readingMinutes: 12, description: 'How session approvals interact with baseline policy.' },
+        { id: 's4-policy-presets', title: 'Policy Presets', difficulty: 'beginner', readingMinutes: 10, description: 'Built-in presets for Discord, Docker, Huggingface, Slack, and more.' },
+      ],
+    },
+    {
+      id: 'c4-operator-approval',
+      title: 'Operator Approval Workflow',
+      description: 'Real-time approval of blocked requests and audit logging.',
+      estimatedMinutes: 45,
+      sections: [
+        { id: 's1-blocked-requests-tui', title: 'Blocked Requests in the TUI', difficulty: 'intermediate', readingMinutes: 10, description: 'How blocked requests appear in the OpenShell terminal.' },
+        { id: 's2-approve-deny-realtime', title: 'Approve & Deny in Real-Time', difficulty: 'intermediate', readingMinutes: 10, description: 'Operator workflow for handling blocked requests.' },
+        { id: 's3-session-vs-persistent', title: 'Session vs Persistent Approvals', difficulty: 'intermediate', readingMinutes: 12, description: 'When approvals expire and how to promote them.' },
+        { id: 's4-audit-logging', title: 'Audit Logging & Compliance', difficulty: 'intermediate', readingMinutes: 10, description: 'JSON audit log format, storage, and incident review.' },
+      ],
+    },
+    {
+      id: 'c5-custom-policies',
+      title: 'Writing Custom Policies',
+      description: 'Schema reference, whitelisting, presets, testing, and best practices.',
+      estimatedMinutes: 60,
+      sections: [
+        { id: 's1-yaml-schema', title: 'YAML Schema Reference', difficulty: 'intermediate', readingMinutes: 12, description: 'Complete policy schema with field-by-field explanation.' },
+        { id: 's2-whitelisting-endpoints', title: 'Whitelisting Custom Endpoints', difficulty: 'intermediate', readingMinutes: 12, description: 'Step-by-step guide to adding new allowed endpoints.' },
+        { id: 's3-creating-presets', title: 'Creating Policy Presets', difficulty: 'intermediate', readingMinutes: 10, description: 'Packaging custom policies as reusable presets.' },
+        { id: 's4-testing-policies', title: 'Testing Policies', difficulty: 'intermediate', readingMinutes: 12, description: 'Schema validation, dry-run mode, and staged rollout.' },
+        { id: 's5-best-practices', title: 'Policy Best Practices', difficulty: 'intermediate', readingMinutes: 10, description: 'Least privilege, audits, version control, and environment separation.' },
+      ],
+    },
+  ],
+}

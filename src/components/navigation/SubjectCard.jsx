@@ -10,8 +10,8 @@ const difficultyColors = {
 }
 
 export default function SubjectCard({ subject }) {
-  const { getSubjectProgress } = useProgress()
-  const progress = getSubjectProgress(subject.id)
+  const { getProgress } = useProgress()
+  const progress = getProgress(subject.id)
   const chapterCount = subject.chapters?.length || 0
   const color = subject.colorHex || '#76B900'
 

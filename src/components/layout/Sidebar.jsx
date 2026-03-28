@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { curriculum } from '../../subjects'
 import useAppStore from '../../store/appStore'
 
-export default function Sidebar({ isOpen, onClose }) {
+export default function Sidebar() {
   const { subjectId, chapterId, sectionId } = useParams()
-  const sidebarOpen = isOpen !== undefined ? isOpen : useAppStore(s => s.sidebarOpen)
-  const setSidebarOpen = onClose || useAppStore(s => s.setSidebarOpen)
+  const sidebarOpen = useAppStore(s => s.sidebarOpen)
+  const setSidebarOpen = useAppStore(s => s.setSidebarOpen)
   const completedSections = useAppStore(s => s.completedSections)
   const [expanded, setExpanded] = useState({})
 
@@ -24,10 +24,7 @@ export default function Sidebar({ isOpen, onClose }) {
   }
 
   const closeSidebar = () => {
-    if (typeof setSidebarOpen === 'function') {
-      if (onClose) onClose()
-      else setSidebarOpen(false)
-    }
+    setSidebarOpen(false)
   }
 
   const getSubjectProgress = (subject) => {

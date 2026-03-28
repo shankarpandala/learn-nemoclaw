@@ -1,0 +1,60 @@
+export default {
+  id: '02-openclaw',
+  title: 'OpenClaw Deep Dive',
+  icon: '\u{1F310}',
+  colorHex: '#4A90D9',
+  description: 'Explore OpenClaw\'s architecture, features, configuration, and understand its limitations that NemoClaw addresses.',
+  difficulty: 'beginner',
+  estimatedHours: 5,
+  prerequisites: ['01-foundations'],
+  chapters: [
+    {
+      id: 'c1-architecture',
+      title: 'OpenClaw Architecture',
+      description: 'Core components, extensions, MCP servers, and the workspace model.',
+      estimatedMinutes: 50,
+      sections: [
+        { id: 's1-core-components', title: 'Core Components & Gateway', difficulty: 'beginner', readingMinutes: 10, description: 'Gateway, nodes, and control UI architecture.' },
+        { id: 's2-extension-system', title: 'Extension System & Tools', difficulty: 'intermediate', readingMinutes: 12, description: 'How OpenClaw extends functionality through plugins and tools.' },
+        { id: 's3-mcp-servers', title: 'MCP Servers & Integrations', difficulty: 'intermediate', readingMinutes: 12, description: 'Model Context Protocol servers for external service integration.' },
+        { id: 's4-workspace-sessions', title: 'Workspace & Session Model', difficulty: 'intermediate', readingMinutes: 10, description: 'How OpenClaw manages workspaces, sessions, and state.' },
+      ],
+    },
+    {
+      id: 'c2-features',
+      title: 'OpenClaw Features',
+      description: 'Slash commands, hooks, permissions, and multi-agent coordination.',
+      estimatedMinutes: 50,
+      sections: [
+        { id: 's1-slash-commands', title: 'Slash Commands & Workflows', difficulty: 'beginner', readingMinutes: 10, description: 'Built-in and custom slash commands for agent interaction.' },
+        { id: 's2-hooks-system', title: 'Hooks System', difficulty: 'intermediate', readingMinutes: 12, description: 'Event-driven hooks for automating agent workflows.' },
+        { id: 's3-permission-modes', title: 'Permission Modes', difficulty: 'intermediate', readingMinutes: 12, description: 'Allowlist, pairing, open, and disabled DM access policies.' },
+        { id: 's4-multi-agent', title: 'Multi-Agent Coordination', difficulty: 'intermediate', readingMinutes: 12, description: 'Running multiple agents with AGENTS.md workspace files.' },
+      ],
+    },
+    {
+      id: 'c3-configuration',
+      title: 'OpenClaw Configuration',
+      description: 'Settings hierarchy, environment variables, and IDE integrations.',
+      estimatedMinutes: 50,
+      sections: [
+        { id: 's1-settings-hierarchy', title: 'Settings Hierarchy', difficulty: 'beginner', readingMinutes: 10, description: 'Five-level precedence chain from built-in to runtime.' },
+        { id: 's2-environment-variables', title: 'Environment Variables', difficulty: 'intermediate', readingMinutes: 12, description: 'Variable substitution and secret reference sources.' },
+        { id: 's3-custom-instructions', title: 'Custom Instructions', difficulty: 'intermediate', readingMinutes: 12, description: 'CLAUDE.md, SOUL.md, and the identity stack.' },
+        { id: 's4-ide-integrations', title: 'IDE Integrations', difficulty: 'beginner', readingMinutes: 10, description: 'VS Code, JetBrains, terminal, and mobile node support.' },
+      ],
+    },
+    {
+      id: 'c4-limitations',
+      title: 'OpenClaw Limitations Without NemoClaw',
+      description: 'Security gaps that motivate the need for NemoClaw.',
+      estimatedMinutes: 45,
+      sections: [
+        { id: 's1-unrestricted-network', title: 'Unrestricted Network Access', difficulty: 'intermediate', readingMinutes: 10, description: 'Data exfiltration, SSRF, and API abuse risks.' },
+        { id: 's2-filesystem-exposure', title: 'Full Filesystem Exposure', difficulty: 'intermediate', readingMinutes: 10, description: 'Reading secrets, SSH keys, and cloud credentials.' },
+        { id: 's3-credential-risks', title: 'Credential Handling Risks', difficulty: 'intermediate', readingMinutes: 10, description: 'How agent credentials can leak through outputs and logs.' },
+        { id: 's4-why-nemoclaw', title: 'Why NemoClaw Exists', difficulty: 'beginner', readingMinutes: 10, description: 'Summary of gaps and how NemoClaw addresses each one.' },
+      ],
+    },
+  ],
+}

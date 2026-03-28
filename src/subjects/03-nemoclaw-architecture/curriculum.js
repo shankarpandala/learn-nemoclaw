@@ -1,0 +1,63 @@
+export default {
+  id: '03-nemoclaw-architecture',
+  title: 'NemoClaw Architecture & Core Concepts',
+  icon: '\u{1F3D7}\u{FE0F}',
+  colorHex: '#FF6600',
+  description: 'Deep dive into NemoClaw\'s two-component design, OpenShell runtime, blueprint model, and inference provider system.',
+  difficulty: 'intermediate',
+  estimatedHours: 6,
+  prerequisites: ['01-foundations', '02-openclaw'],
+  chapters: [
+    {
+      id: 'c1-architecture',
+      title: 'NemoClaw Architecture',
+      description: 'Plugin-blueprint split, lifecycle stages, inference flow, and supply chain safety.',
+      estimatedMinutes: 55,
+      sections: [
+        { id: 's1-two-component-design', title: 'Two-Component Design', difficulty: 'intermediate', readingMinutes: 12, description: 'TypeScript plugin and Python blueprint separation.' },
+        { id: 's2-blueprint-lifecycle', title: 'Blueprint Lifecycle', difficulty: 'intermediate', readingMinutes: 15, description: 'Five stages: Resolve, Verify, Plan, Apply, Status.' },
+        { id: 's3-inference-flow', title: 'Inference Flow', difficulty: 'intermediate', readingMinutes: 12, description: 'Request journey from sandbox through gateway to NVIDIA endpoint.' },
+        { id: 's4-supply-chain-safety', title: 'Supply Chain Safety', difficulty: 'intermediate', readingMinutes: 12, description: 'Immutable blueprints and digest verification.' },
+      ],
+    },
+    {
+      id: 'c2-openshell',
+      title: 'NVIDIA OpenShell Runtime',
+      description: 'The sandbox runtime powering NemoClaw\'s isolation.',
+      estimatedMinutes: 70,
+      sections: [
+        { id: 's1-what-is-openshell', title: 'What is OpenShell?', difficulty: 'intermediate', readingMinutes: 10, description: 'Overview and comparison with traditional containers.' },
+        { id: 's2-landlock-enforcement', title: 'Landlock LSM Enforcement', difficulty: 'intermediate', readingMinutes: 15, description: 'Kernel-level filesystem access control.' },
+        { id: 's3-seccomp-filters', title: 'Seccomp Filters', difficulty: 'intermediate', readingMinutes: 15, description: 'System call filtering and privilege escalation prevention.' },
+        { id: 's4-network-namespaces', title: 'Network Namespace Isolation', difficulty: 'intermediate', readingMinutes: 15, description: 'veth pairs, endpoint whitelisting, and DNS control.' },
+        { id: 's5-openshell-tui', title: 'The OpenShell TUI', difficulty: 'beginner', readingMinutes: 10, description: 'Terminal UI for monitoring and operator approval.' },
+      ],
+    },
+    {
+      id: 'c3-plugin-blueprint',
+      title: 'The Plugin-Blueprint Model',
+      description: 'How the thin plugin and versioned blueprint work together.',
+      estimatedMinutes: 50,
+      sections: [
+        { id: 's1-plugin-internals', title: 'Plugin Internals', difficulty: 'intermediate', readingMinutes: 12, description: 'Provider registration, slash command handler, and IPC.' },
+        { id: 's2-blueprint-versioning', title: 'Blueprint Versioning', difficulty: 'intermediate', readingMinutes: 12, description: 'Semver, version pinning, and upgrade workflows.' },
+        { id: 's3-thin-plugin-philosophy', title: 'Thin Plugin Philosophy', difficulty: 'intermediate', readingMinutes: 10, description: 'Why keeping the plugin thin improves security and maintainability.' },
+        { id: 's4-reproducible-environments', title: 'Reproducible Environments', difficulty: 'intermediate', readingMinutes: 12, description: 'How identical blueprints and policies ensure consistency.' },
+      ],
+    },
+    {
+      id: 'c4-inference',
+      title: 'Inference Providers',
+      description: 'Configuring NVIDIA, OpenAI, Anthropic, Google, and local inference.',
+      estimatedMinutes: 75,
+      sections: [
+        { id: 's1-nvidia-nemotron', title: 'NVIDIA Nemotron (Default)', difficulty: 'beginner', readingMinutes: 10, description: 'Default provider setup via build.nvidia.com.' },
+        { id: 's2-openai-anthropic', title: 'OpenAI & Anthropic', difficulty: 'beginner', readingMinutes: 12, description: 'Configuring third-party cloud providers.' },
+        { id: 's3-google-gemini', title: 'Google Gemini', difficulty: 'beginner', readingMinutes: 10, description: 'Gemini setup and use cases.' },
+        { id: 's4-local-inference', title: 'Local Inference (Ollama, vLLM)', difficulty: 'intermediate', readingMinutes: 15, description: 'Running models locally with Ollama and vLLM.' },
+        { id: 's5-custom-endpoints', title: 'Custom Endpoints', difficulty: 'intermediate', readingMinutes: 12, description: 'OpenAI-compatible and custom provider configuration.' },
+        { id: 's6-credential-isolation', title: 'Credential Isolation', difficulty: 'intermediate', readingMinutes: 12, description: 'How API keys stay on the host and never enter the sandbox.' },
+      ],
+    },
+  ],
+}
