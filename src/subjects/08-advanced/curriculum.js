@@ -1,0 +1,61 @@
+export default {
+  id: '08-advanced',
+  title: 'Advanced Topics & Ecosystem',
+  icon: '\u{1F52C}',
+  colorHex: '#1565C0',
+  description: 'Local GPU inference with NVIDIA NIM, custom blueprints, advanced OpenShell configuration, and contributing to NemoClaw.',
+  difficulty: 'advanced',
+  estimatedHours: 5,
+  prerequisites: ['06-cloud-setup', '07-applications'],
+  chapters: [
+    {
+      id: 'c1-local-inference',
+      title: 'Local Inference with NVIDIA NIM',
+      description: 'Running models locally with NIM, vLLM, and Ollama.',
+      estimatedMinutes: 60,
+      sections: [
+        { id: 's1-nvidia-nim', title: 'What is NVIDIA NIM?', difficulty: 'intermediate', readingMinutes: 10, description: 'NVIDIA NIM container deployment and NemoClaw integration.' },
+        { id: 's2-local-gpu-setup', title: 'Local GPU Setup', difficulty: 'intermediate', readingMinutes: 12, description: 'NVIDIA driver, CUDA toolkit, and Container Toolkit installation.' },
+        { id: 's3-vllm-integration', title: 'vLLM Integration', difficulty: 'advanced', readingMinutes: 12, description: 'PagedAttention, Docker setup, and multi-GPU parallelism.' },
+        { id: 's4-ollama-lightweight', title: 'Ollama for Lightweight Models', difficulty: 'beginner', readingMinutes: 10, description: 'Ollama installation and NemoClaw configuration.' },
+        { id: 's5-performance-tuning', title: 'Performance Tuning', difficulty: 'advanced', readingMinutes: 15, description: 'GPU memory, KV cache, quantization, and benchmarking.' },
+      ],
+    },
+    {
+      id: 'c2-custom-blueprints',
+      title: 'Custom Blueprints',
+      description: 'Creating, versioning, and distributing custom blueprints.',
+      estimatedMinutes: 45,
+      sections: [
+        { id: 's1-blueprint-anatomy', title: 'Blueprint Anatomy', difficulty: 'intermediate', readingMinutes: 12, description: 'Directory structure, blueprint.yaml reference, and resolution chain.' },
+        { id: 's2-creating-blueprints', title: 'Creating Custom Blueprints', difficulty: 'advanced', readingMinutes: 12, description: 'Step-by-step blueprint creation and testing.' },
+        { id: 's3-versioning-distribution', title: 'Versioning & Distribution', difficulty: 'advanced', readingMinutes: 10, description: 'Semver, digest signing, and registry publishing.' },
+        { id: 's4-community-blueprints', title: 'Community Blueprints', difficulty: 'intermediate', readingMinutes: 10, description: 'Discovering, auditing, and contributing community blueprints.' },
+      ],
+    },
+    {
+      id: 'c3-openshell-advanced',
+      title: 'OpenShell Advanced',
+      description: 'Deep dives into Landlock, seccomp, and network namespaces.',
+      estimatedMinutes: 50,
+      sections: [
+        { id: 's1-landlock-deep-dive', title: 'Landlock Deep Dive', difficulty: 'advanced', readingMinutes: 15, description: 'Ruleset layering, path hierarchy, and ABI versions.' },
+        { id: 's2-custom-seccomp', title: 'Custom Seccomp Profiles', difficulty: 'advanced', readingMinutes: 12, description: 'strace profiling and custom JSON profile writing.' },
+        { id: 's3-network-advanced', title: 'Network Namespace Advanced', difficulty: 'advanced', readingMinutes: 12, description: 'Multi-namespace bridges, custom routing, and traffic shaping.' },
+        { id: 's4-debugging-isolation', title: 'Debugging Isolation Issues', difficulty: 'advanced', readingMinutes: 12, description: 'strace, nsenter, and systematic debugging workflows.' },
+      ],
+    },
+    {
+      id: 'c4-contributing',
+      title: 'Contributing to NemoClaw',
+      description: 'Repository structure, issues, PRs, and community.',
+      estimatedMinutes: 35,
+      sections: [
+        { id: 's1-repo-structure', title: 'Repository Structure', difficulty: 'intermediate', readingMinutes: 10, description: 'Monorepo layout, Makefile targets, and dev prerequisites.' },
+        { id: 's2-filing-issues', title: 'Filing Issues', difficulty: 'beginner', readingMinutes: 8, description: 'Bug reports, feature requests, and security disclosure.' },
+        { id: 's3-contributing-code', title: 'Contributing Code', difficulty: 'intermediate', readingMinutes: 10, description: 'Fork, branch, commit workflow and CI requirements.' },
+        { id: 's4-community-discord', title: 'Community & Discord', difficulty: 'beginner', readingMinutes: 7, description: 'Discord channels, help-seeking, and community events.' },
+      ],
+    },
+  ],
+}
